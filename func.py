@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://sales-transcript-feedback.fly.dev/'
+url = 'https://sales-transcript-feedback-supabase.fly.dev'
 headers = {
     'accept': 'application/json',
     'Content-Type': 'application/json'
@@ -16,7 +16,8 @@ def start_bot(prompt:str, voice_id:str,roleplay_type):
         "roleplay_type":roleplay_type,
         "difficulty_level":"Easy",
         "avatar_name":"John",
-        "user_id":"test_user"
+        "user_id":"test_user",
+        "frontend_desc": "string"
     }
 
     response = requests.post(url, headers=headers, json=data)
